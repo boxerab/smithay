@@ -1309,6 +1309,7 @@ impl X11Wm {
             self.conn
                 .set_selection_owner(x11rb::NONE, selection.atom, selection.timestamp)?;
         }
+        self.conn.flush()?;
 
         Ok(())
     }
